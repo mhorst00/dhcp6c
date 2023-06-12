@@ -73,7 +73,10 @@ usually prints warning, debugging, or error messages to
 it prints the messages to standard error if this option is
 specified.
 .It Fl i
-Info-req mode.  In this mode, stateless DHCPv6 is executed with the folllowing configuration, and the obtained info is written to stdout.  After this output,
+Info-req mode.
+In this mode, stateless DHCPv6 is executed with the following configuration,
+and the obtained info is written to stdout.
+After this output,
 .Nm
 is terminated.  (suits for a use in shell-script etc).
 .Bd -literal -offset
@@ -107,6 +110,7 @@ option is specified.
 .Pp
 Upon receipt of a
 .Dv SIGHUP ,
+.Dv SIGINT ,
 .Dv SIGTERM ,
 or
 .Dv SIGUSR1
@@ -116,14 +120,18 @@ will remove all stateful resources from the system.
 After that,
 .Dv SIGHUP
 reinitializes the daemon,
-and
+and both
+.DV SIGINT
+or
 .Dv SIGTERM
-stops the daemon.
-In both cases,
+stop the daemon.
+In these cases,
 DHCPv6 Release message will be sent to release resources
 assigned from servers.
 .Dv SIGUSR1
 stops the daemon as
+.Dv SIGINT
+or
 .Dv SIGTERM
 does though DHCPv6 Release message will not be sent.
 .\"

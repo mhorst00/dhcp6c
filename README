@@ -5,12 +5,12 @@ Improvements include the following:
 - Reload the client configuration on SIGHUP
 - Removed all unused binaries except dhcp6c
 - Raw option send and receive support
-- PDINFO delegated prefix environment variable
+- PDINFO delegated prefixes environment variable
 - Accept interfaces from the configuration file
 
 It is based on a patched version of WIDE-DHCPv6 maintained by hrs@FreeBSD.org.
 
-Improvements include the follwowing:
+Improvements include the following:
 
 - Increased log verbosity.
 - Fix socket leakage by setting FD_CLOEXEC.
